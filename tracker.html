@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amelie Juliette</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="./assets/css/style-tracker.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="container py-3">
+      <h1 class="text-center">
+        <a href="./index2.html" class="navigationLink">Home</a>
+      </h1>
+      <h1 class="text-center py-5">Expense Tracker</h1>
+    </section>
+
+    <section class="container d-flex justify-content-center">
+      <div class="card expenseTracker px-2 pt-3 pb-5" style="width: 500px">
+        <div class="card-body">
+          <div class="card-title py-5">
+            <h2>YOUR BALANCE</h2>
+            <h1 id="currentBalance">Rp 0</h1>
+          </div>
+          <div class="d-flex row row-cols-2 justify-content-center mx-auto">
+            <div class="border-end border-black">
+              <h3 class="text-end">INCOME</h3>
+              <h3 id="income" class="text-end text-success">+ Rp 0</h3>
+            </div>
+
+            <div>
+              <h3>EXPENSE</h3>
+              <h3 id="expense" class="text-danger">- Rp 0</h3>
+            </div>
+          </div>
+
+          <div class="my-5">
+            <table id="expenseTable" class="historyTable">
+              <thead>
+                <tr>
+                  <h2>History</h2>
+                  <hr />
+                  <!-- <td scope="col" style="font-size: 25px">History</td> -->
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="">
+            <h2>New Transaction</h2>
+            <hr />
+            <div class="d-flex flex-row">
+              <form
+                action="#"
+                class="space-y-5"
+                onsubmit="handleSubmission(event)"
+                id="expenseForm"
+              >
+                <label for="transactiondetail"
+                  ><p class="formLabel">Transaction Details</p></label
+                >
+                <div>
+                  <input
+                    type="text"
+                    id="transactiondetail"
+                    class="inputField"
+                    placeholder="Enter Details..."
+                    required
+                  />
+                </div>
+
+                <label for="amount"
+                  ><p class="formLabel">
+                    Amount (negative - expense, positive - income)
+                  </p></label
+                >
+                <div>
+                  <input
+                    type="number"
+                    id="amount"
+                    class="inputField"
+                    placeholder="Enter Amount..."
+                    required
+                  />
+                </div>
+                <div>
+                  <button type="submit" class="addTransactionButton">
+                    Add Transaction
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentIndex = 1;
+      var form = document.getElementById("expenseForm");
+      var tablebody = document.getElementById("expenseTable");
+
+      var income = 0;
+      var expense = 0;
+      var currentBalance = 0;
+
+      const handleSubmission = (event) => {
+        event.preventDefault();
+
+        var transactionDetail =
+          document.getElementById("transactiondetail").value;
+        var amount = document.getElementById("amount").value;
+
+        const row = document.createElement("tr", (id = currentIndex));
+
+        const transactionDetailContent = document.createElement("td");
+        const amountContent = document.createElement("td");
+        const deleteButton = document.createElement("td");
+        const rowMarker = document.createElement("td");
+
+        deleteButton.setAttribute(
+          "onClick",
+          `deleteRow(${amount}, ${currentIndex}) `
+        );
+
+        deleteButton.setAttribute("class", "deleteButton");
+
+        if (amount.includes("-")) {
+          rowMarker.setAttribute("class", "rowMarkerRed");
+        } else {
+          rowMarker.setAttribute("class", "rowMarkerGreen");
+        }
+
+        row.setAttribute("class", "tableRow");
+
+        row.setAttribute("id", currentIndex);
+
+        transactionDetailContent.textContent = transactionDetail;
+        amountContent.textContent = amount;
+        deleteButton.innerHTML = "Delete";
+
+        row.appendChild(transactionDetailContent);
+        row.appendChild(amountContent);
+        row.appendChild(deleteButton);
+        row.appendChild(rowMarker);
+
+        tablebody.appendChild(row);
+
+        amount = document.getElementById("amount").value;
+        currentBalanceHTML = document.getElementById("currentBalance");
+
+        if (amount.includes("-")) {
+          expenseHTML = document.getElementById("expense");
+          expense -= amount;
+          expenseHTML.value = expense;
+          expenseHTML.textContent = `Rp -${expense}`;
+
+          currentBalance += parseInt(amount);
+          console.log(currentBalance);
+          currentBalanceHTML.value = currentBalance;
+          currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+        } else {
+          incomeHTML = document.getElementById("income");
+          income = parseInt(amount) + income;
+          incomeHTML.value = income;
+          incomeHTML.textContent = `Rp ${income}`;
+
+          currentBalance += parseInt(amount);
+          currentBalanceHTML.value = currentBalance;
+          console.log(currentBalance);
+          currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+        }
+
+        currentIndex++;
+        form.reset();
+      };
+
+      function deleteRow(amount, rowId) {
+        var rowtoDelete = document.getElementById(rowId);
+        var currentBalanceHTML = document.getElementById("currentBalance");
+
+        if (rowtoDelete) {
+          tablebody.removeChild(rowtoDelete);
+
+          if (amount > 0) {
+            currentBalance -= parseInt(amount);
+            currentBalanceHTML.value = currentBalance;
+            console.log(currentBalance);
+            currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+
+            incomeHTML = document.getElementById("income");
+            income = parseInt(amount) - income;
+            incomeHTML.value = income;
+            incomeHTML.textContent = `Rp ${income}`;
+          } else {
+            expenseHTML = document.getElementById("expense");
+            expense += amount;
+            expenseHTML.value = expense;
+            if (expense == 0) {
+              expenseHTML.textContent = `Rp ${expense}`;
+            } else {
+              expenseHTML.textContent = `Rp -${expense}`;
+            }
+
+            currentBalance -= parseInt(amount);
+            console.log(currentBalance);
+            currentBalanceHTML.value = currentBalance;
+            currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+          }
+        }
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

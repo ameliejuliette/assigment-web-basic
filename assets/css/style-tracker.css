@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+:root {
+  font-family: monospace;
+  background-color: #f7f7f7;
+}
+
+.navigationLink {
+  color: black;
+}
+
+.expenseTracker {
+  border-top-right-radius: 80px 80px;
+  border-top-left-radius: 20px 20px;
+  background-color: white;
+  border-bottom-right-radius: 20px 20px;
+  border-bottom-left-radius: 80px 80px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border: none;
+  height: 100%;
+}
+
+.deleteButton {
+  padding: 5px 0 5px 25px;
+  background: url(/assets/trash-solid.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 15px;
+}
+.rowMarkerRed {
+  background-color: #eb5757;
+  padding: 4px 8px;
+  align-items: center;
+  width: 20px;
+  margin-left: 30px;
+}
+.rowMarkerGreen {
+  background-color: hsl(128, 79%, 63%);
+  padding: 4px 8px;
+  align-items: center;
+  width: 20px;
+  margin-left: 30px;
+}
+
+.historyTable {
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  width: 100%;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.tableRow {
+  border: none;
+  padding-left: 10px;
+}
+
+.formLabel {
+  font-size: 20px;
+  font-weight: semi-bold;
+  margin-top: 1rem;
+  padding-bottom: 1px;
+}
+
+.inputField {
+  border: 1px solid;
+  border-color: lightgray;
+  border-radius: 2px;
+  color: black;
+  height: 3rem;
+  padding-bottom: 2px;
+  width: 100%;
+}
+
+.addTransactionButton {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #2d3047;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 20px;
+}
