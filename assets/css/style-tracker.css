@@ -22,7 +22,7 @@
 
 .deleteButton {
   padding: 5px 0 5px 25px;
-  background: url(/assets/trash-solid.svg);
+  background: url(/assets/svg/trash-solid.svg);
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 15px;

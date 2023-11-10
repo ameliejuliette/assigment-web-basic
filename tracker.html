@@ -16,7 +16,7 @@
   <body>
     <section class="container py-3">
       <h1 class="text-center">
-        <a href="./index2.html" class="navigationLink">Home</a>
+        <a href="./home.html" class="navigationLink">Home</a>
       </h1>
       <h1 class="text-center py-5">Expense Tracker</h1>
     </section>
@@ -143,7 +143,7 @@
         row.setAttribute("id", currentIndex);
 
         transactionDetailContent.textContent = transactionDetail;
-        amountContent.textContent = amount;
+        amountContent.textContent = formatRupiah(amount);
         deleteButton.innerHTML = "Delete";
 
         row.appendChild(transactionDetailContent);
@@ -160,22 +160,22 @@
           expenseHTML = document.getElementById("expense");
           expense -= amount;
           expenseHTML.value = expense;
-          expenseHTML.textContent = `Rp -${expense}`;
+          expenseHTML.textContent = `Rp -${formatRupiah(expense)}`;
 
           currentBalance += parseInt(amount);
           console.log(currentBalance);
           currentBalanceHTML.value = currentBalance;
-          currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+          currentBalanceHTML.textContent = `Rp ${formatRupiah(currentBalance)}`;
         } else {
           incomeHTML = document.getElementById("income");
           income = parseInt(amount) + income;
           incomeHTML.value = income;
-          incomeHTML.textContent = `Rp ${income}`;
+          incomeHTML.textContent = `Rp ${formatRupiah(income)}`;
 
           currentBalance += parseInt(amount);
           currentBalanceHTML.value = currentBalance;
           console.log(currentBalance);
-          currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+          currentBalanceHTML.textContent = `Rp ${formatRupiah(currentBalance)}`;
         }
 
         currentIndex++;
@@ -193,28 +193,39 @@
             currentBalance -= parseInt(amount);
             currentBalanceHTML.value = currentBalance;
             console.log(currentBalance);
-            currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+            currentBalanceHTML.textContent = `Rp ${formatRupiah(
+              currentBalance
+            )}`;
 
             incomeHTML = document.getElementById("income");
             income = parseInt(amount) - income;
             incomeHTML.value = income;
-            incomeHTML.textContent = `Rp ${income}`;
+            incomeHTML.textContent = `Rp ${formatRupiah(income)}`;
           } else {
             expenseHTML = document.getElementById("expense");
             expense += amount;
             expenseHTML.value = expense;
             if (expense == 0) {
-              expenseHTML.textContent = `Rp ${expense}`;
+              expenseHTML.textContent = `Rp ${formatRupiah(expense)}`;
             } else {
-              expenseHTML.textContent = `Rp -${expense}`;
+              expenseHTML.textContent = `Rp -${formatRupiah(expense)}`;
             }
 
             currentBalance -= parseInt(amount);
             console.log(currentBalance);
             currentBalanceHTML.value = currentBalance;
-            currentBalanceHTML.textContent = `Rp ${currentBalance}`;
+            currentBalanceHTML.textContent = `Rp ${formatRupiah(
+              currentBalance
+            )}`;
           }
         }
+      }
+    </script>
+
+    <script>
+      function formatRupiah(amount) {
+        amount = parseInt(amount);
+        return amount.toLocaleString("id-ID");
       }
     </script>
 

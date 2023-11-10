@@ -15,9 +15,7 @@
 
   <header>
     <nav class="navbar navbar-expand-lg container py-4 px-2">
-      <a class="navbar-brand navBarTitle" href="./index2.html"
-        >Amelie Juliette</a
-      >
+      <a class="navbar-brand navBarTitle" href="./home.html">Amelie Juliette</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -35,7 +33,7 @@
             <a
               class="nav-link active navBarMenu"
               aria-current="page"
-              href="./index2.html"
+              href="./home.html"
               >HOME</a
             >
           </li>
@@ -60,7 +58,7 @@
   </header>
   <body>
     <section>
-      <div id="imageCarousel" class="carousel slide">
+      <div id="imageCarousel" class="carousel slide imageCarousel">
         <div class="carousel-indicators">
           <button
             type="button"
@@ -340,7 +338,7 @@
               class="card-img-top bg-danger rounded-3"
             />
             <div class="card-body bg-body-secondary rounded-3">
-              <h4 class="card-title py-2"><b>Web Development</b></h4>
+              <h4 class="card-title py-2 fw-bold">Web Development</h4>
               <p class="card-text">
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -373,7 +371,7 @@
 
             <img src="./assets/img/pink.png" class="card-img-top rounded-3" />
             <div class="card-body bg-body-secondary rounded-3">
-              <h4 class="card-title py-2"><b>UI Design</b></h4>
+              <h4 class="card-title py-2 fw-bold">UI Design</h4>
               <p class="card-text">
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -409,7 +407,7 @@
               alt="..."
             />
             <div class="card-body bg-body-secondary rounded-3">
-              <h4 class="card-title py-2"><b>Interaction</b></h4>
+              <h4 class="card-title py-2 fw-bold">Interaction</h4>
               <p class="card-text">
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -445,7 +443,7 @@
               alt="..."
             />
             <div class="card-body bg-body-secondary rounded-3">
-              <h4 class="card-title py-2"><b>User Interaction</b></h4>
+              <h4 class="card-title py-2 fw-bold">User Interaction</h4>
               <p class="card-text">
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -458,98 +456,98 @@
     </section>
 
     <section class="py-5">
-      <div id="carouselText" class="carousel slide">
+      <div
+        id="quoteCarousel"
+        class="carousel slide mt-4"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-indicators">
           <button
             type="button"
-            data-bs-target="#carouselText"
+            data-bs-target="#quoteCarousel"
             data-bs-slide-to="0"
-            class="active rounded-circle border border-black"
+            class="active rounded-circle border border-black textCarouselButton"
             aria-current="true"
             aria-label="Slide 1"
-            style="height: 8px; width: 8px"
+            style="width: 8px; height: 8px"
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselText"
+            class="rounded-circle border border-black textCarouselButton"
+            data-bs-target="#quoteCarousel"
             data-bs-slide-to="1"
             aria-label="Slide 2"
-            class="rounded-circle border border-black"
-            style="height: 8px; width: 8px"
+            style="width: 8px; height: 8px"
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselText"
+            class="rounded-circle border border-black textCarouselButton"
+            data-bs-target="#quoteCarousel"
             data-bs-slide-to="2"
             aria-label="Slide 3"
-            class="rounded-circle border border-black"
-            style="height: 8px; width: 8px"
+            style="width: 8px; height: 8px"
           ></button>
           <button
             type="button"
-            data-bs-target="#carouselText"
+            class="rounded-circle border border-black textCarouselButton"
+            data-bs-target="#quoteCarousel"
             data-bs-slide-to="3"
             aria-label="Slide 4"
-            class="rounded-circle border border-black"
-            style="height: 8px; width: 8px"
+            style="width: 8px; height: 8px"
           ></button>
         </div>
-        <div class="carousel-inner" data-bs-interval="10000">
-          <div
-            class="carousel-item active bg-body-secondary py-20 justify-content-center d-flex flex-row align-items-center text-black"
-            style="height: 200px"
-          >
-            <p>
-              <i>
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                amet,consectetur, adipisci velit..."
-              </i>
-            </p>
-            <p>
-              <b>- Jaison Wanier -</b>
-            </p>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div
+              class="bg-body-secondary py-5 horizontalPadding fst-italic text-center"
+            >
+              <div class="text-black">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                ornare dictum suscipit. Cras efficitur placerat lectus eu
+                consectetur. Vestibulum faucibus velit et congue commodo.
+              </div>
+
+              <div class="fw-bold mt-4 text-black">- Hello 123 -</div>
+            </div>
           </div>
-          <div
-            class="carousel-item bg-body-secondary py-20 justify-content-center d-flex flex-column align-items-center"
-            style="height: 200px"
-          >
-            <p>
-              <i>
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                amet,consectetur, adipisci velit..."
-              </i>
-            </p>
-            <p>
-              <b>- Jaison Wanier -</b>
-            </p>
+          <div class="carousel-item">
+            <div
+              class="bg-body-secondary py-5 horizontalPadding fst-italic text-center"
+            >
+              <div class="text-black">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                ornare dictum suscipit. Cras efficitur placerat lectus eu
+                consectetur. Vestibulum faucibus velit et congue commodo.
+              </div>
+
+              <div class="fw-bold mt-4 text-black">- Hi Hehehe -</div>
+            </div>
           </div>
-          <div
-            class="carousel-item bg-body-secondary py-20 justify-content-center d-flex align-items-center"
-            style="height: 200px"
-          >
-            <p>
-              <i>
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                amet,consectetur, adipisci velit..."
-              </i>
-            </p>
-            <p>
-              <b>- Jaison Wanier -</b>
-            </p>
+          <div class="carousel-item">
+            <div
+              class="bg-body-secondary py-5 horizontalPadding fst-italic text-center"
+            >
+              <div class="text-black">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                ornare dictum suscipit. Cras efficitur placerat lectus eu
+                consectetur. Vestibulum faucibus velit et congue commodo.
+              </div>
+
+              <div class="fw-bold mt-4 text-black">- Finally yes -</div>
+            </div>
           </div>
-          <div
-            class="carousel-item bg-body-secondary py-20 justify-content-center d-flex align-items-center"
-            style="height: 200px"
-          >
-            <p>
-              <i>
-                "Neque porro quisquam est qui dolorem ipsum quia dolor sit
-                amet,consectetur, adipisci velit..."
-              </i>
-            </p>
-            <p>
-              <b>- Jaison Wanier -</b>
-            </p>
+          <div class="carousel-item">
+            <div
+              class="bg-body-secondary py-5 horizontalPadding fst-italic text-center"
+            >
+              <div class="text-black">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                ornare dictum suscipit. Cras efficitur placerat lectus eu
+                consectetur. Vestibulum faucibus velit et congue commodo.
+              </div>
+
+              <div class="fw-bold mt-4 text-black">- Finally -</div>
+            </div>
           </div>
         </div>
       </div>
@@ -558,7 +556,7 @@
     <section
       class="container justify-content-center align-content-center text-center py-3 pb-5"
     >
-      <h2><b>Courses We Offer</b></h2>
+      <h2 class="fw-bold">Courses We Offer</h2>
       <p class="py-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eu
         pharetra magna, at vulputate metus. Phasellus id nisl non mauris laoreet
@@ -574,7 +572,7 @@
         <div class="col py-3">
           <div class="card bg-body-secondary" style="width: fit-content">
             <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
+              <h5 class="card-title fw-bold">Heading Course</h5>
               <p class="card-text py-2 pr-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 eu pharetra magna, at vulputate metus. Phasellus id nisl non
@@ -587,21 +585,7 @@
         <div class="col py-3">
           <div class="card bg-body-secondary" style="width: fit-content">
             <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
-              <p class="card-text py-2 pr-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                eu pharetra magna, at vulputate metus. Phasellus id nisl non
-                mauris laoreet iaculis. Ut ultrices leo vel suscipit egestas.
-                Nunc in.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col py-3">
-          <div class="card bg-body-secondary" style="width: fit-content">
-            <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
+              <h5 class="card-title fw-bold">Heading Course</h5>
               <p class="card-text py-2 pr-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 eu pharetra magna, at vulputate metus. Phasellus id nisl non
@@ -615,7 +599,7 @@
         <div class="col py-3">
           <div class="card bg-body-secondary" style="width: fit-content">
             <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
+              <h5 class="card-title fw-bold">Heading Course</h5>
               <p class="card-text py-2 pr-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 eu pharetra magna, at vulputate metus. Phasellus id nisl non
@@ -629,7 +613,7 @@
         <div class="col py-3">
           <div class="card bg-body-secondary" style="width: fit-content">
             <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
+              <h5 class="card-title fw-bold">Heading Course</h5>
               <p class="card-text py-2 pr-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 eu pharetra magna, at vulputate metus. Phasellus id nisl non
@@ -643,7 +627,21 @@
         <div class="col py-3">
           <div class="card bg-body-secondary" style="width: fit-content">
             <div class="card-body text-start">
-              <h5 class="card-title"><b>Heading Course</b></h5>
+              <h5 class="card-title fw-bold">Heading Course</h5>
+              <p class="card-text py-2 pr-2">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                eu pharetra magna, at vulputate metus. Phasellus id nisl non
+                mauris laoreet iaculis. Ut ultrices leo vel suscipit egestas.
+                Nunc in.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col py-3">
+          <div class="card bg-body-secondary" style="width: fit-content">
+            <div class="card-body text-start">
+              <h5 class="card-title fw-bold">Heading Course</h5>
               <p class="card-text py-2 pr-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
                 eu pharetra magna, at vulputate metus. Phasellus id nisl non
@@ -693,7 +691,7 @@
         class="row row-cols-1 row-cols-md-2 row-cols-xl-4 d-flex justify-content-between flex-column flex-lg-row"
       >
         <div class="col py-2" style="width: max-content">
-          <h5><b>Our Contact</b></h5>
+          <h5 class="fw-bold">Our Contact</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-4">
               Amelie Juliette
@@ -708,7 +706,7 @@
         </div>
 
         <div class="col py-2" style="width: max-content">
-          <h5><b>Quick Links</b></h5>
+          <h5 class="fw-bold">Quick Links</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">Latest Events</li>
             <li class="nav-item mb-2">Terms and Conditions</li>
@@ -719,7 +717,7 @@
         </div>
 
         <div class="col py-2" style="width: max-content">
-          <h5><b>Latest Posts</b></h5>
+          <h5 class="fw-bold">Latest Posts</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -733,7 +731,7 @@
           </ul>
         </div>
         <div class="col py-2" style="width: max-content">
-          <h5><b>Recent News</b></h5>
+          <h5 class="fw-bold">Recent News</h5>
           <ul class="nav flex-column">
             <li class="nav-item mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
